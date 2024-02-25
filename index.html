@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+    function auth(){
+        var user = document.getElementById("user").value;
+        var password = document.getElementById("pass").value;
+
+
+        if (user == "root" && password == "root"){
+            window.location.href = 'mainmenu.html';
+            // window.location.href = "/mainmenu.html";
+            // window.location.assign("mainmenu.html")
+            //alert("Login Successful");
+        }
+        else {
+            alert("Login Unsuccessful");
+            return;
+        }
+
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script src="Login.js" type="text/javascript" defer></script>-->
+    <title> Login in to Dinomancer </title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
+    
+
     <div class ="wrapper">
         <form action="">
             <h1> Login To Dinomancer </h1>
             <div class="input-box">
-                <input type="text" id='userid' placeholder="Username" required>
+                <input type="text" placeholder="Username" id="user" required>
                 <box-icon name='user'></box-icon>
             </div>
             <div class="input-box">
-                <input type="password" id='password' placeholder="Password" required>
+                <input type="password" placeholder="Password" id="pass" required>
                 <box-icon name='lock-alt' color='#ffffff' ></box-icon>
             </div>
-            <div class = "remember-forgot">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="#"> Forgot Password? </a>
-            </div>
-            <button type="submit" class="btn" onclick="attemptLogin()">Login</button>
+
+ 
+
+            <button onclick="auth()"  type="reset" class="btn">Login</button>
             <div class="register-link">
-                <p> Don't have an account? <a href="#" onClick="javascript:loadRegister()">Register</a></p>
+                <p> Don't have an account? <a target="_blank" href="register.html">Register</a></p>
         </form>
     </div>
 </body>
